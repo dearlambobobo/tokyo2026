@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>東京 2026｜正式行程手冊</title>
+<style>
+:root {
+  --bg:#0d1117; --panel:#161c24; --card:#1c2430; --soft:#242e3a;
+  --text:#f6f8fb; --muted:#aeb8c7; --border:#303b4a;
+  --accent:#91baff; --green:#72d5a4; --red:#ff9b83; --yellow:#f2cf73;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:linear-gradient(180deg,#0d1117,#121923 45%,#0d1117);
+  color:var(--text);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  line-height:1.6
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:auto;padding:22px 16px 48px}
+.hero{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-start}
+.hero h1{margin:0;font-size:clamp(28px,5vw,42px);line-height:1.15}
+.sub{margin-top:8px;color:var(--muted)}
+.badges{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px}
+.badge{font-size:12px;border:1px solid var(--border);border-radius:999px;padding:5px 9px;background:#131923;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:15px}
+.soft{background:var(--soft);border:1px solid var(--border);border-radius:14px;padding:12px}
+.title{font-weight:800}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+@media(max-width:720px){.grid2{grid-template-columns:1fr}}
+.section{margin:18px 0}
+.tabs{
+  display:flex;gap:8px;overflow:auto;padding:10px 0;position:sticky;top:0;z-index:20;
+  background:rgba(13,17,23,.94);backdrop-filter:blur(10px)
+}
+.tab{
+  flex:0 0 auto;border:1px solid var(--border);background:#151a22;color:var(--text);
+  padding:10px 14px;border-radius:12px;cursor:pointer;font-weight:700
+}
+.tab.active{border-color:var(--accent);background:#1b2737}
+.panel{display:none}
+.panel.active{display:block}
+.day-title{font-size:21px;font-weight:850;margin:16px 0 4px}
+.day-sub{color:var(--muted);font-size:14px;margin-bottom:12px}
+.stop{margin:12px 0;border-left:4px solid var(--green)}
+.stop.fixed{border-left-color:var(--red)}
+.stop.flex{border-left-color:var(--yellow)}
+.stop-head{display:flex;gap:10px;align-items:flex-start}
+.check{width:20px;height:20px;margin-top:3px;accent-color:#8fb8ff}
+.stop-time{font-size:12px;color:var(--muted);margin-bottom:2px}
+.stop-title{font-weight:820;font-size:17px}
+.stop-desc{font-size:14px;color:var(--muted);margin-top:5px}
+.done .stop-title{text-decoration:line-through;opacity:.55}
+.done .stop-desc{opacity:.45}
+.ride{
+  margin:7px 0 11px 28px;padding:10px 12px;background:#111821;border:1px solid #344153;border-radius:13px
+}
+.ride-title{font-weight:750;font-size:14px;margin-bottom:4px}
+.timechip{display:inline-block;margin-left:6px;padding:3px 8px;border-radius:999px;background:#fff3cd;color:#795500;font-size:12px;font-weight:800;white-space:nowrap}
+.ride p{margin:3px 0;font-size:13px;color:#dce5f2}
+.suica{display:inline-block;font-size:11px;border:1px solid #365d49;border-radius:999px;padding:2px 7px;color:#bde8cf;margin-left:5px}
+.alert{font-size:12px;color:#f5df9d;margin-top:5px}
+.restaurant{
+  margin-top:9px;padding:10px 11px;background:#151c25;border:1px solid #354153;border-radius:11px;font-size:13px
+}
+.restaurant .kind{
+  display:inline-block;font-size:11px;border:1px solid #4b5a6f;border-radius:999px;padding:2px 7px;margin-bottom:6px;color:#d8e4f5
+}
+.backups{margin-top:8px;padding-top:8px;border-top:1px dashed #3a4656}
+.backups div{margin:6px 0}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.btn{border:1px solid var(--border);background:#151a22;color:var(--text);border-radius:10px;padding:8px 11px;cursor:pointer}
+.footer{text-align:center;color:var(--muted);font-size:12px;margin-top:28px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<section class="hero">
+  <div>
+    <div class="badges">
+      <span class="badge">🇯🇵 TOKYO 2026</span>
+      <span class="badge">10/8–10/12</span>
+      <span class="badge">正式最新版 v10</span>
+    </div>
+    <h1>東京旅行手冊 🗼🛍️</h1>
+    <div class="sub">行程只保留必要電車交通；走路一律交給 Google Maps。餐廳全部標完整日文名、類別與備案。</div>
+  </div>
+  <div class="card">
+    <div class="title">🔒 固定預約</div>
+    <div class="small muted">🎀 10/8 16:40　Chiikawa Park</div>
+    <div class="small muted">🥩 10/10 16:00　和牛一頭焼肉 房家 東京駅店</div>
+  </div>
+</section>
+
+<section class="grid2 section">
+  <div class="card">
+    <div class="small muted">✈️ 去程</div>
+    <div class="title">10/8 台北 → 成田 T1</div>
+    <div class="muted">06:45 → 11:15</div>
+  </div>
+  <div class="card">
+    <div class="small muted">✈️ 回程</div>
+    <div class="title">10/12 成田 T1 → 台北</div>
+    <div class="muted">16:50 → 19:40</div>
+  </div>
+</section>
+
+<section class="card section">
+  <div class="title">🏨 住宿</div>
+  <div class="grid2" style="margin-top:10px">
+    <div class="soft">
+      <div class="small muted">10/8–10/10</div>
+      <div class="title">Henn na Hotel Tokyo Asakusa Tawaramachi Premier</div>
+      <div class="small muted">田原町 G18</div>
+      <div style="margin-top:6px"><a target="_blank" href="https://maps.app.goo.gl/czLMM4bWvfQFDeJx7">Google Maps ↗</a></div>
+    </div>
+    <div class="soft">
+      <div class="small muted">10/10–10/12</div>
+      <div class="title">相鐵 FRESA INN 東京錦糸町</div>
+      <div class="small muted">JR錦糸町站南口附近</div>
+      <div style="margin-top:6px"><a target="_blank" href="https://maps.app.goo.gl/nPmrKtJHnEYipoEf8">Google Maps ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<div class="tabs">
+  <button class="tab active" data-day="8">10/8 池袋</button>
+  <button class="tab" data-day="9">10/9 春日部</button>
+  <button class="tab" data-day="10">10/10 銀座／東京站</button>
+  <button class="tab" data-day="11">10/11 澀谷／池袋</button>
+  <button class="tab" data-day="12">10/12 回程</button>
+</div>
+
+<div class="toolbar"><button class="btn" id="clear">清除勾選</button></div>
+
+<section class="panel active" id="day8">
+  <div class="day-title">10/8（四）｜抵達東京 → 池袋</div>
+  <div class="day-sub">第一天新增最後一天限定任務：先衝 SHIBUYA TSUTAYA 咒術迴戰5週年快閃，再準時抵達16:40的吉伊卡哇 PARK。</div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-time">11:15</div><div class="stop-title">✈️ 成田機場第一航廈抵達</div>
+    <div class="stop-desc">入境、領行李後直接搭車去田原町飯店放行李。</div>
+  </div></div></div>
+
+  <div class="ride">
+    <div class="ride-title">🚃 成田 T1 → 淺草／田原町 <span class="suica">Suica 可用</span> <span class="timechip">⏱ 約65～80分</span></div>
+    <p><strong>京成 Access 特急</strong>｜找會經「押上・淺草」的班次，方向以 <strong>西馬込／羽田空港方面</strong> 為主。</p>
+    <p>到 <strong>浅草 A18</strong>；可直接走到飯店，或轉 <strong>銀座線 G19 → G18 田原町</strong> 1站。</p>
+    <div class="alert">⚠️ 目的地若是「京成上野」，不是你要的淺草直通車。</div>
+  </div>
+
+  <div class="stop card"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🏨 田原町飯店放行李</div>
+    <div class="stop-desc">放完行李就往池袋移動。</div>
+  </div></div></div>
+
+  <div class="stop card flex"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🍵 現磨抹茶｜かぐらちゃかプチ 浅草店</div>
+    <div class="stop-desc">下飛機、飯店放完行李後先去喝抹茶。就在西淺草、離田原町很近；喝完再往池袋，不另外增加電車段落。主打現磨抹茶與濃度可選的抹茶飲。</div>
+    <div class="restaurant"><span class="kind">抹茶／和風甜點／咖啡店</span><br>
+      <b>日文店名：</b>かぐらちゃかプチ 浅草店<br>
+      <b>地址：</b>東京都台東区西浅草2-27-11<br>
+      <a target="_blank" href="https://maps.app.goo.gl/kMV8RgDJ7s31nzmA9?g_st=al">📍 Google Maps（你提供的連結）</a><br>
+      <span class="alert">⏰ 抵達時間依入境與機場電車狀況滾動；16:40 Chiikawa Park 是固定優先。</span>
+    </div>
+  </div></div></div>
+
+  <div class="ride">
+    <div class="ride-title">🚇 田原町 → 澀谷 <span class="suica">Suica 可用</span> <span class="timechip">⏱ 約30～35分</span></div>
+    <p><strong>田原町 G18</strong> 搭 <strong>東京Metro銀座線</strong>，方向：<strong>渋谷方面</strong> → 終點 <strong>渋谷 G01</strong>，不用轉車。</p>
+  </div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-time">建議14:30～15:15</div><div class="stop-title">⚡ 最後一天｜アニメ『呪術廻戦』5th anniversary POP UP SHOP</div>
+    <div class="stop-desc">10/8就是活動最終日，優先度直接拉高。5週年描き下ろし和裝插圖周邊＋「黒閃」同步雙輪盤遊戲回歸。逛完立刻往池袋，不在澀谷加其他店。</div>
+    <div class="restaurant"><span class="kind">咒術迴戰／5週年／和裝插圖 POP UP</span><br>
+      <b>地點：</b>SHIBUYA TSUTAYA 6F IP書店<br>
+      <b>活動期間：</b>2026/10/2～10/8（今天最後一天）<br>
+      <b>6F營業：</b>10:00～21:00<br>
+      <b>地址：</b>東京都渋谷区宇田川町21-6 SHIBUYA TSUTAYA 6F<br>
+      <a target="_blank" href="https://shibuyatsutaya.tsite.jp/article/2661.html">🔗 SHIBUYA TSUTAYA 官方活動頁</a><br>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=SHIBUYA+TSUTAYA">📍 Google Maps</a>
+      <div class="alert">⏰ 建議最晚15:20～15:30離開TSUTAYA。16:40 Chiikawa Park 已購票，不為其他澀谷行程停留。</div>
+    </div>
+  </div></div></div>
+
+  <div class="ride">
+    <div class="ride-title">🚃 澀谷 → 池袋 <span class="suica">Suica 可用</span> <span class="timechip">⏱ 約15～20分</span></div>
+    <p>優先搭 <strong>JR埼京線／湘南新宿線</strong> 往池袋方面直達；看哪班先來即可。</p>
+    <p>不想判斷車種也可搭 <strong>JR山手線 外回り（新宿・池袋方面）</strong> 直達池袋。</p>
+    <p class="muted">抵達池袋後直接 Google Maps 導航 Chiikawa Park；目標16:10～16:20到附近。</p>
+  </div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-time">16:40 已購票</div><div class="stop-title">🎀 Chiikawa Park</div>
+    <div class="stop-desc">第一天主行程。慢慢玩、慢慢買，其他池袋店留到10/11。</div>
+  </div></div></div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🥩 晚餐｜ねぎし 池袋東口店</div>
+    <div class="stop-desc">Chiikawa Park 結束後吃牛舌定食。招牌組合是牛舌＋麥飯＋山藥泥＋牛尾湯，適合第一天好好坐下來吃一餐。</div>
+    <div class="restaurant">
+      <span class="kind">牛舌／麥飯／山藥泥定食</span><br>
+      <b>日文店名：</b>ねぎし 池袋東口店<br>
+      <b>地址：</b>東京都豊島区東池袋1-11-1 オーク東池袋ビル B1F<br>
+      <b>營業：</b>11:00～22:30（L.O.22:00）｜<b>不可預約</b><br>
+      <a target="_blank" href="https://maps.app.goo.gl/gahPieRiJNtSirrN7?g_st=ac">📍 Google Maps（你提供的連結）</a>
+      <div class="alert">🔔 先吃晚餐；ねぎし若排隊太久，就直接切換下面備案。扭蛋放到吃飽後自由逛。</div>
+      <div class="backups">
+        <b>晚餐備案｜2家炸豬排＋2家沾麵</b>
+        <div>🐷 <b>とんかつ・牛カツ 油屋</b>｜炸豬排／牛カツ <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=とんかつ・牛カツ+油屋+池袋">📍 Maps</a></div>
+        <div>🐷 <b>嬉嬉豚とんかつ「君に、揚げる。」池袋本店</b>｜嬉嬉豚炸豬排 <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=嬉嬉豚とんかつ+君に、揚げる。+池袋本店">📍 Maps</a></div>
+        <div>🍜 <b>三ツ矢堂製麺 池袋サンシャイン60通り店</b>｜柚子風味沾麵 <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=三ツ矢堂製麺+池袋サンシャイン60通り店">📍 Maps</a></div>
+        <div>🍜 <b>つけ麺屋 やすべえ 池袋店</b>｜沾麵／自家製麵 <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=つけ麺屋+やすべえ+池袋店">📍 Maps</a></div>
+      </div>
+    </div>
+  </div></div></div>
+
+  <div class="stop card flex"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🎰 晚餐後｜Yodobashi 池袋 5F 大型扭蛋區＋自由逛</div>
+    <div class="stop-desc">吃飽再去看扭蛋，這段完全機動：有體力就慢慢逛，累了就撤退。把大型扭蛋區提前處理，也替10/11池袋掃貨減壓。</div>
+    <div class="restaurant"><b>完整名稱：</b>ヨドバシカメラ マルチメディア池袋 5F ガシャポンエリア<br><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=ヨドバシカメラ+マルチメディア池袋">📍 Google Maps</a></div>
+  </div></div></div>
+
+  <div class="ride">
+    <div class="ride-title">🚃 池袋 → 田原町 <span class="suica">Suica 可用</span> <span class="timechip">⏱ 約30～35分</span></div>
+    <p><strong>JR山手線</strong> 方向：<strong>田端・上野方面</strong> → 上野。</p>
+    <p>上野轉 <strong>銀座線</strong>，方向：<strong>浅草方面</strong> → <strong>田原町 G18</strong>。</p>
+  </div>
+</section>
+
+<section class="panel" id="day9">
+  <div class="day-title">10/9（五）｜淺草早晨 → 春日部小新巡禮 → 晴空塔 → 秋葉原晚餐</div>
+  <div class="day-sub">早上先把淺草想吃的處理完，再出發春日部；春日部核心巡禮抓約2小時～2小時20分。只有春日部段特別標示點到點步行時間，方便掌握巡禮節奏。</div>
+
+  <div class="stop card"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-time">早上</div><div class="stop-title">⛩️ 雷門・淺草寺散步</div>
+    <div class="stop-desc">趁早上人潮還沒完全湧入，先走雷門、仲見世、淺草寺一帶。這段不設硬時間，依當天起床狀況調整。</div>
+  </div></div></div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-time">10:30左右</div><div class="stop-title">🍡 喜久屋｜みたらし団子</div>
+    <div class="stop-desc">上次吃過很喜歡的醬油糰子，這次直接二刷。位在仲見世，當作午餐前的小點心。</div>
+    <div class="restaurant">
+      <span class="kind">醬油糰子／和菓子</span><br>
+      <b>完整店名：</b>喜久屋<br>
+      <a target="_blank" href="https://maps.app.goo.gl/q87JTas8QZo5H9ZF9">📍 Google Maps</a>
+    </div>
+  </div></div></div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-time">11:00開門｜午餐本命</div><div class="stop-title">🍜 浅草名代らーめん 与ろゐ屋</div>
+    <div class="stop-desc">淺草老牌和風拉麵。湯頭是雞豬骨＋煮干／鰹節／昆布系，帶柚子香；如果看到排隊沒有太誇張就吃這間。</div>
+    <div class="restaurant">
+      <span class="kind">和風醬油拉麵／梅塩拉麵</span><br>
+      <b>完整日文店名：</b>浅草名代らーめん 与ろゐ屋<br>
+      <a target="_blank" href="https://share.google/5ijq1riKtOwshycQX">📍 Google Maps（你提供的連結）</a>
+      <div class="backups">
+        <b>午餐備案 TOP 2</b>
+        <div>① <b>立食寿司 日向丸 浅草店</b>｜<span class="kind">立食壽司／現握壽司</span> 吃得快、很適合後面還要趕春日部。 <a target="_blank" href="https://maps.app.goo.gl/thTj8T22CvfqoxAy8?g_st=al">📍 Maps</a></div>
+        <div>② <b>まぐろとシャリ 浅草店</b>｜<span class="kind">鮪魚丼／海鮮丼／可單點雲丹</span> 10:30開，若拉麵爆排就直接換這間。 <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E3%81%BE%E3%81%90%E3%82%8D%E3%81%A8%E3%82%B7%E3%83%A3%E3%83%AA%20%E6%B5%85%E8%8D%89%E5%BA%97">📍 Maps</a></div>
+      </div>
+      <div class="alert">🍟 最終逃生方案：真的都排爆就現場快速解決，不為午餐犧牲春日部市役所時間。</div>
+    </div>
+  </div></div></div>
+
+  <div class="stop card flex"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🥢 “超”料理道具専門店 飯田屋｜筷子（機動）</div>
+    <div class="stop-desc">飯田屋在西淺草／合羽橋方向，和東武淺草站不同方向。若當天覺得要多走一段太累，就直接跳過，之後再買；不要為了筷子拖延春日部。</div>
+    <div class="restaurant">
+      <span class="kind">料理道具／筷子採買</span><br>
+      <b>完整日文店名：</b>“超”料理道具専門店 飯田屋<br>
+      <a target="_blank" href="https://share.google/Gsky9i8HEyqc0iuRC">📍 Google Maps（你提供的連結）</a>
+    </div>
+  </div></div></div>
+
+  <div class="ride">
+    <div class="ride-title">🚃 東武浅草駅 → 春日部 <span class="suica">Suica 可用</span> <span class="timechip">⏱ 約45～55分</span></div>
+    <p><strong>東武浅草駅 TS01</strong> 搭 <strong>東武スカイツリーライン</strong>，方向：<strong>東武動物公園／久喜／南栗橋方面</strong> → <strong>春日部 TS27</strong>。</p>
+    <p class="muted">認「東武浅草駅」，不是 TX浅草站。</p>
+    <a target="_blank" href="https://maps.app.goo.gl/5Nhncs4YtE7p5Jd88?g_st=ac">📍 東武浅草駅 Google Maps</a>
+  </div>
+
+  <div class="stop card"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🖍️ 春日部駅｜小新發車旋律＋車站拍照</div>
+    <div class="stop-desc">抵達先收車站任務：聽小新發車旋律、拍站內外小新相關裝飾與立牌。抓10分鐘左右即可。</div>
+    <div class="alert">🚶 下一站：春日部駅東口 → ぷらっとかすかべ｜約3分鐘</div>
+  </div></div></div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🖼️ ぷらっとかすかべ｜小新情報發信館</div>
+    <div class="stop-desc">小新粉必去。拿春日部散步地圖、看小新專區與複製原畫、拍小新＋向日葵雕像、サトーココノカドー背景板，並拿集章台紙／蓋章。</div>
+    <div class="restaurant">
+      <span class="kind">小新聖地／觀光資訊／集章</span><br>
+      <b>完整日文名稱：</b>春日部情報発信館「ぷらっとかすかべ」<br>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E6%98%A5%E6%97%A5%E9%83%A8%E6%83%85%E5%A0%B1%E7%99%BA%E4%BF%A1%E9%A4%A8%20%E3%81%B7%E3%82%89%E3%81%A3%E3%81%A8%E3%81%8B%E3%81%99%E3%81%8B%E3%81%B9">📍 Google Maps</a>
+    </div>
+    <div class="alert">🚶 下一站：ぷらっとかすかべ → 春日部市役所｜約15～18分鐘（跨到車站西側，現場直接用 Google Maps 導航）</div>
+  </div></div></div>
+
+  <div class="stop card flex"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🚧 春日部市郷土資料館｜這次不能去</div>
+    <div class="stop-desc">原本想補進巡禮，但重新核對春日部市官方最新公告後發現：<b>2026/10/1～2028/3（預定）因建築改修工程休館</b>。你10/9到訪時已休館，所以不繞過去，直接把時間留給市役所與 LaLa Garden。</div>
+  </div></div></div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-time">最高優先｜平日17:15前</div><div class="stop-title">🏛️ 春日部市役所｜本日最重要</div>
+    <div class="stop-desc">這站不能犧牲。核心巡禮版抓約25～30分鐘：小新相關雕像、彩色小新人孔蓋展示、Photo Spot、館內小新展示／紀念品與紀念章依現場最新配置收集。</div>
+    <div class="restaurant">
+      <span class="kind">小新聖地／限定紀念品／集章</span><br>
+      <b>完整日文名稱：</b>春日部市役所<br>
+      <b>平日開放：</b>08:30～17:15<br>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E6%98%A5%E6%97%A5%E9%83%A8%E5%B8%82%E5%BD%B9%E6%89%80">📍 Google Maps</a>
+      <div class="alert">🔔 這站以現場最新配置為準：先拍雕像＋人孔蓋＋Photo Spot，再找小新展示／限定紀念品與紀念章。</div>
+      <div class="alert">🚶 下一站：春日部市役所 → LaLa Garden 春日部｜約5～7分鐘</div>
+    </div>
+  </div></div></div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🎬 LaLa Garden 春日部 3F｜ブリブリシネマスタジオ</div>
+    <div class="stop-desc">春日部另一個主場。看歷代電影主題造景、巨型角色裝飾、遊戲與小新周邊；核心巡禮版先抓35～45分鐘。真的開始玩機台／買周邊，時間會自動膨脹🤣</div>
+    <div class="restaurant">
+      <span class="kind">小新電影主題遊戲中心／周邊</span><br>
+      <b>完整日文名稱：</b>ゲーセン クレヨンしんちゃん 嵐を呼ぶ ブリブリシネマスタジオ<br>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B2%E3%83%BC%E3%82%BB%E3%83%B3%20%E3%82%AF%E3%83%AC%E3%83%A8%E3%83%B3%E3%81%97%E3%82%93%E3%81%A1%E3%82%83%E3%82%93%20%E5%B5%90%E3%82%92%E5%91%BC%E3%81%B6%20%E3%83%96%E3%83%AA%E3%83%96%E3%83%AA%E3%82%B7%E3%83%8D%E3%83%9E%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%AA">📍 Google Maps</a><br>
+      <span class="alert">🕳️ 離開前可順便找 LaLa Garden 南側的小新人孔蓋。</span><br>
+      <span class="alert">🚶 下一站：LaLa Garden 春日部 → 春日部駅西口｜約5～6分鐘</span>
+    </div>
+  </div></div></div>
+
+  <div class="stop card flex"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🏬 舊イトーヨーカドー春日部店｜外觀朝聖（時間有剩才加）</div>
+    <div class="stop-desc">サトーココノカドー原型舊址。店舖已於2024年閉店，所以只建議有剩餘時間才去；<b>不計入2小時15分核心巡禮</b>，也不要為它壓縮市役所或 LaLa Garden。</div>
+  </div></div></div>
+
+  <div class="ride">
+    <div class="ride-title">🚃 春日部 → 押上／東京晴空塔 <span class="suica">Suica 可用</span> <span class="timechip">⏱ 約45～55分</span></div>
+    <p><strong>春日部 TS27</strong> 搭 <strong>東武スカイツリーライン</strong> 往東京方向，前往 <strong>押上／とうきょうスカイツリー</strong> 一帶。</p>
+  </div>
+
+  <div class="stop card flex"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🗼 東京ソラマチ｜回程加碼</div>
+    <div class="stop-desc">時間夠再逛：4F Tree Village 看小新商品、3F ちいかわらんど。這裡沒有常設小新官方專賣店，真正官方東京店在你10/10會去的東京駅一番街。</div>
+  </div></div></div>
+
+  <div class="ride">
+    <div class="ride-title">🚇 押上／晴空塔 → 秋葉原 <span class="suica">Suica 可用</span> <span class="timechip">⏱ 約20～25分</span></div>
+    <p><strong>押上 Z14</strong> 搭 <strong>半藏門線</strong>，方向：<strong>渋谷方面</strong> → <strong>錦糸町 Z13</strong>。</p>
+    <p>轉 <strong>JR中央・総武線各駅停車</strong>，方向：<strong>御茶ノ水・新宿方面</strong> → <strong>秋葉原</strong>。</p>
+  </div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🥩 晚餐｜ローストビーフ大野 秋葉原店</div>
+    <div class="stop-desc">上次吃過很喜歡，這次直接二刷。主打堆高高的嫩烤牛肉丼，配蛋黃與醬汁，是你前一次東京行程的高評價餐廳。</div>
+    <div class="restaurant">
+      <span class="kind">烤牛肉丼／Roast Beef Bowl</span><br>
+      <b>完整日文店名：</b>ローストビーフ大野 秋葉原店<br>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E3%83%AD%E3%83%BC%E3%82%B9%E3%83%88%E3%83%93%E3%83%BC%E3%83%95%E5%A4%A7%E9%87%8E%20%E7%A7%8B%E8%91%89%E5%8E%9F%E5%BA%97">📍 Google Maps</a>
+    </div>
+  </div></div></div>
+
+  <div class="ride">
+    <div class="ride-title">🚇 秋葉原 → 田原町 <span class="suica">Suica 可用</span> <span class="timechip">⏱ 約15～20分</span></div>
+    <p><strong>秋葉原 H16</strong> 搭 <strong>日比谷線</strong>，方向：<strong>北千住方面</strong> → <strong>上野 H18</strong>。</p>
+    <p>轉 <strong>銀座線 G16</strong>，方向：<strong>浅草方面</strong> → <strong>田原町 G18</strong>。</p>
+  </div>
+</section>
+
+<section class="panel" id="day10">
+  <div class="day-title">10/10（六）｜換飯店 → TEAVANA™ → On／HOKA → 東京站 → 原宿</div>
+  <div class="day-sub">09:00先去銀座 TEAVANA™，10:30處理 On 整理券，再依整理券時間安排 On／HOKA；下午東京站，16:00燒肉，晚上原宿 niko and ...＋KIDDY LAND。</div>
+
+  <div class="ride">
+    <div class="ride-title">🧳 田原町 → 錦糸町飯店 <span class="suica">Suica 可用</span> <span class="timechip">⏱ 約25～30分</span></div>
+    <p><strong>田原町 G18</strong> 搭 <strong>銀座線</strong>，方向：<strong>渋谷方面</strong> → <strong>三越前 G12</strong>。</p>
+    <p>地下轉乘 <strong>半藏門線 Z09</strong>，方向：<strong>押上方面</strong> → <strong>錦糸町 Z13</strong>。</p>
+  </div>
+
+  <div class="stop card"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🧳 相鐵 FRESA INN 錦糸町寄行李</div>
+    <div class="stop-desc">早一點完成寄行李，目標約08:20～08:30再從錦糸町出發去銀座，趕09:00 TEAVANA™。</div>
+  </div></div></div>
+
+  <div class="ride">
+    <div class="ride-title">🚇 錦糸町 → 銀座 <span class="suica">Suica 可用</span> <span class="timechip">⏱ 約25～30分</span></div>
+    <p><strong>錦糸町 Z13</strong> 搭 <strong>半藏門線</strong>，方向：<strong>渋谷方面</strong> → <strong>三越前 Z09</strong>。</p>
+    <p>地下轉乘 <strong>銀座線 G12</strong>，方向：<strong>渋谷方面</strong> → <strong>銀座 G09</strong>。</p>
+  </div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-time">09:00開門｜建議約09:00～10:00</div><div class="stop-title">🍵 スターバックス ティバーナ ストア 銀座マロニエ通り</div>
+    <div class="stop-desc">先喝茶再去 On 等整理券。這間才是 B1F 的 TEAVANA™ 專門店，主打石臼抹茶與茶飲；不是1F的 Reserve Store。</div>
+    <div class="restaurant"><span class="kind">TEAVANA™／抹茶／茶飲</span><br>
+      <b>日文店名：</b>スターバックス ティバーナ ストア 銀座マロニエ通り<br>
+      <b>地址：</b>東京都中央区銀座3-7-3 銀座オーミビル B1F<br>
+      <b>營業：</b>09:00～21:00<br>
+      <a target="_blank" href="https://maps.app.goo.gl/jM1TjTdkzMVmenmj7?g_st=ac">📍 Google Maps（你提供的連結）</a>
+    </div>
+  </div></div></div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-time">約10:15到</div><div class="stop-title">👟 On Flagship Store Tokyo Ginza</div>
+    <div class="stop-desc">10:30左右先處理整理券。拿到入店時段後，再決定 On 與 HOKA 誰先逛。</div>
+  </div></div></div>
+
+  <div class="stop card"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-time">11:00開門</div><div class="stop-title">👟 HOKA Marunouchi｜HOKA 丸の内</div>
+    <div class="stop-desc">就是上次覺得好逛、有遇到台灣店員的店。主攻試鞋、尺寸與新款；和 On 依整理券時間機動互換順序。</div>
+    <div class="restaurant"><span class="kind">鞋店</span><br>
+      <b>店名：</b>HOKA Marunouchi／HOKA 丸の内<br>
+      <b>地址：</b>東京都千代田区有楽町1-7-1 有楽町電気ビル1F<br>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=HOKA%20Marunouchi%20%E6%9C%89%E6%A5%BD%E7%94%BA1-7-1">📍 Google Maps</a>
+    </div>
+  </div></div></div>
+
+
+  <div class="stop card flex"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🐟 午餐首選｜まぐろと魚 海鮮めし なかまた</div>
+    <div class="stop-desc">海鮮丼專門店，目標是「雲丹どっさりめし」。不預約，依 On／HOKA 整理券時間滾動調整；排太久就換備案。</div>
+    <div class="restaurant">
+      <span class="kind">海鮮丼／海膽丼</span><br>
+      <b>日文店名：</b>まぐろと魚 海鮮めし なかまた<br>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E3%81%BE%E3%81%90%E3%82%8D%E3%81%A8%E9%AD%9A%20%E6%B5%B7%E9%AE%AE%E3%82%81%E3%81%97%20%E3%81%AA%E3%81%8B%E3%81%BE%E3%81%9F%20%E9%8A%80%E5%BA%A7">📍 Google Maps</a>
+      <div class="backups">
+        <b>午餐備案 TOP 3</b>
+        <div>① <b>北海道バル 海 グランスタ八重洲店</b>｜<span class="kind">海鮮丼／北海道料理</span> 東京站改札外，最適合直接銜接下午行程。 <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E5%8C%97%E6%B5%B7%E9%81%93%E3%83%90%E3%83%AB%20%E6%B5%B7%20%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%B9%E3%82%BF%E5%85%AB%E9%87%8D%E6%B4%B2%E5%BA%97">Maps</a></div>
+        <div>② <b>海鮮居酒屋 羽田市場 グランスタ東京店</b>｜<span class="kind">海鮮丼／鮪魚</span> 東京站改札內，適合快速吃。 <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E6%B5%B7%E9%AE%AE%E5%B1%85%E9%85%92%E5%B1%8B%20%E7%BE%BD%E7%94%B0%E5%B8%82%E5%A0%B4%20%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%B9%E3%82%BF%E6%9D%B1%E4%BA%AC%E5%BA%97">Maps</a></div>
+        <div>③ <b>築地カイセンノドン</b>｜<span class="kind">豪華海鮮丼</span> 東京站改札內，有鮪魚、海膽、鮭魚卵等。 <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E7%AF%89%E5%9C%B0%E3%82%AB%E3%82%A4%E3%82%BB%E3%83%B3%E3%83%8E%E3%83%89%E3%83%B3%20%E6%9D%B1%E4%BA%AC%E9%A7%85">Maps</a></div>
+      </div>
+    </div>
+  </div></div></div>
+
+  <div class="stop card"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🍮 Brulee Merize Tokyo Gift Palette Store</div>
+    <div class="stop-desc">東京站必吃甜點。到東京站後優先處理，避免熱門品項下午完售。</div>
+  </div></div></div>
+
+  <div class="stop card"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🐧 Suica企鵝 Fair FINAL｜GRANSTA東京</div>
+    <div class="stop-desc">不是單一展場，而是 GRANSTA 指定店舖分散販售限定商品。</div>
+  </div></div></div>
+
+  <div class="stop card"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🛍️ 東京一番街／Character Street</div>
+    <div class="stop-desc">主攻：ちいかわらんど、JUMP SHOP、蠟筆小新官方店；其他角色店自由逛。</div>
+    <div class="alert">🔔 記得找：東京站店限定「餘額不足小八貓」立體模型！</div>
+  </div></div></div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-time">16:00 已訂位</div><div class="stop-title">🥩 和牛一頭焼肉 房家 東京駅店</div>
+    <div class="stop-desc">今天正式大餐。A5黑毛和牛一頭買，能吃不同部位，招牌之一是盛岡風手打冷麵。</div>
+    <div class="restaurant">
+      <span class="kind">燒肉／和牛</span><br>
+      <b>日文店名：</b>和牛一頭焼肉 房家 東京駅店<br>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E5%92%8C%E7%89%9B%E4%B8%80%E9%A0%AD%E7%84%BC%E8%82%89%20%E6%88%BF%E5%AE%B6%20%E6%9D%B1%E4%BA%AC%E9%A7%85%E5%BA%97">📍 Google Maps</a><br>
+      <span class="muted">已訂位，不另外設備案。</span>
+    </div>
+  </div></div></div>
+
+  <div class="ride">
+    <div class="ride-title">🚃 東京站 → 原宿 <span class="suica">Suica 可用</span> <span class="timechip">⏱ 約25～30分</span></div>
+    <p><strong>JR山手線</strong>，方向：<strong>品川・渋谷方面</strong> → <strong>原宿 JY19</strong>，直達不用換車。</p>
+  </div>
+
+  <div class="stop card"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🐯 niko and ... TOKYO</div>
+    <div class="stop-desc">niko and ... × 咒術迴戰合作商品。主要任務：虎杖帽T。</div>
+    <div class="restaurant"><span class="kind">服飾／動漫聯名</span><br>
+      <b>地址：</b>東京都渋谷区神宮前6-12-20 J6 Front 1F・2F<br>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=niko%20and%20...%20TOKYO%20%E7%A5%9E%E5%AE%AE%E5%89%8D6-12-20">📍 Google Maps</a><br>
+      <a target="_blank" href="https://www.dot-st.com/nikoand/disp/item/1078894/?&deqwas_inflow=QGRzcDUwOkgzUEJUYmlWbFUyZktTNWxxaDctWFE6dmlld2VyOnRvcDoxNzhjN2UyYTcyNmU0ZGE4YzEzNzYyYjkxMjQyZWU3NDoxUzFR">👕 目標商品頁｜JJK／ウラケフーディー（商品番号 1078894）</a><br>
+      <span class="alert">⚠️ 線上商品頁 ≠ TOKYO店現場庫存；10/9晚上或10/10出發前再確認虎杖款尺寸／顏色是否還有貨。</span>
+    </div>
+  </div></div></div>
+
+  <div class="stop card"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🛍️ 3COINS 原宿本店</div>
+    <div class="stop-desc">原宿本店正式排入10/10。與 niko and ... TOKYO、KIDDY LAND 同區，當晚順路逛，不另外增加電車移動。</div>
+    <div class="restaurant"><span class="kind">生活雜貨／3COINS旗艦店</span><br>
+      <b>日文店名：</b>3COINS 原宿本店<br>
+      <b>營業時間：</b>11:00～20:00<br>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=3COINS%20%E5%8E%9F%E5%AE%BF%E6%9C%AC%E5%BA%97">📍 Google Maps</a><br>
+      <span class="alert">🔔 原宿段建議順序：niko and ... TOKYO → 3COINS 原宿本店 → KIDDY LAND。</span>
+    </div>
+  </div></div></div>
+
+  <div class="stop card"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🧸 キデイランド原宿店｜KIDDY LAND 原宿店</div>
+    <div class="stop-desc">niko and ... TOKYO 逛完後順路去。原宿／神宮前角色商品旗艦店，適合做當天最後的角色周邊補漏；與 niko and ... 同區，不需要再搭電車。</div>
+    <div class="restaurant"><span class="kind">角色雜貨／玩具／伴手禮</span><br>
+      <b>日文店名：</b>キデイランド原宿店<br>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E3%82%AD%E3%83%87%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E5%8E%9F%E5%AE%BF%E5%BA%97">📍 Google Maps</a><br>
+      <span class="alert">🔔 建議順序：niko and ... TOKYO → 3COINS 原宿本店 → KIDDY LAND → 明治神宮前／原宿回錦糸町。</span>
+    </div>
+  </div></div></div>
+
+  <div class="ride">
+    <div class="ride-title">🚇 明治神宮前 → 錦糸町 <span class="suica">Suica 可用</span> <span class="timechip">⏱ 約35～40分</span></div>
+    <p><strong>明治神宮前 C03</strong> 搭 <strong>千代田線</strong>，方向：<strong>綾瀬／北綾瀬方面</strong> → <strong>大手町 C11</strong>。</p>
+    <p>地下轉 <strong>半藏門線 Z08</strong>，方向：<strong>押上方面</strong> → <strong>錦糸町 Z13</strong>。</p>
+  </div>
+</section>
+
+<section class="panel" id="day11">
+  <div class="day-title">10/11（日）｜澀谷快閃 → 池袋大逛</div>
+  <div class="day-sub">早上澀谷吃鬆餅、買えもじの子＋澀谷寶可夢限定徽章；下午到晚上留給池袋，Sunshine City 再處理池袋限定徽章。</div>
+
+  <div class="ride">
+    <div class="ride-title">🚇 錦糸町 → 澀谷 <span class="suica">Suica 可用</span> <span class="timechip">⏱ 約30～35分</span></div>
+    <p><strong>錦糸町 Z13</strong> 搭 <strong>半藏門線</strong>，方向：<strong>渋谷方面</strong> → <strong>渋谷 Z01</strong>，直達。</p>
+  </div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-time">09:00</div><div class="stop-title">🥞 FLIPPER'S 渋谷店</div>
+    <div class="stop-desc">舒芙蕾鬆餅早餐，吃完再去 LINE FRIENDS 等開店。</div>
+    <div class="restaurant">
+      <span class="kind">舒芙蕾鬆餅／早餐</span><br>
+      <b>日文店名：</b>FLIPPER'S 渋谷店<br>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=FLIPPER%27S%20%E6%B8%8B%E8%B0%B7%E5%BA%97">📍 Google Maps</a>
+      <div class="backups">
+        <b>早餐備案 TOP 3</b>
+        <div>① <b>沒有特別備案</b>｜FLIPPER'S 本身就是這天指定想吃；若臨時休店，就直接提早去 LINE FRIENDS 附近找咖啡店。</div>
+      </div>
+    </div>
+  </div></div></div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-time">11:00</div><div class="stop-title">🟡 えもじの子（仮）POP-UP</div>
+    <div class="stop-desc">LINE FRIENDS SQUARE SHIBUYA。今天澀谷最重要任務，買完就撤。</div>
+  </div></div></div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">⚡ ポケモンセンターシブヤ｜限定徽章任務</div>
+    <div class="stop-desc">朋友委託：記得找「限定徽章」。本來就會去渋谷PARCO吃極味や，寶可夢中心也在PARCO，直接一起處理，不另外增加跨區移動。</div>
+    <div class="restaurant"><span class="kind">寶可夢中心／朋友代購</span><br>
+      <b>日文店名：</b>ポケモンセンターシブヤ<br>
+      <b>地點：</b>渋谷PARCO 6F<br>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%82%B7%E3%83%96%E3%83%A4%20%E6%B8%8B%E8%B0%B7PARCO">📍 Google Maps</a><br>
+      <span class="alert">🔔 任務：買澀谷店限定徽章</span>
+    </div>
+  </div></div></div>
+
+  <div class="stop card flex"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🥩 午餐首選｜極味や 渋谷PARCO店</div>
+    <div class="stop-desc">自己在鐵板把漢堡排煎到喜歡熟度的人氣店。若排30分鐘左右可接受；估60～90分鐘就直接放棄。</div>
+    <div class="restaurant">
+      <span class="kind">漢堡排／鐵板料理</span><br>
+      <b>日文店名：</b>極味や 渋谷PARCO店<br>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E6%A5%B5%E5%91%B3%E3%82%84%20%E6%B8%8B%E8%B0%B7PARCO%E5%BA%97">📍 Google Maps</a>
+      <div class="backups">
+        <b>午餐備案 TOP 3</b>
+        <div>① <b>池袋到站後再吃</b>｜最省時間，極味や爆排就直接撤。</div>
+        <div>② <b>ひつまぶし名古屋備長 池袋パルコ店</b>｜<span class="kind">鰻魚三吃</span> PARCO 8F。 <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E3%81%B2%E3%81%A4%E3%81%BE%E3%81%B6%E3%81%97%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%82%99%E9%95%B7%20%E6%B1%A0%E8%A2%8B%E3%83%91%E3%83%AB%E3%82%B3%E5%BA%97">Maps</a></div>
+        <div>③ <b>出雲 池袋</b>｜<span class="kind">鰻魚料理</span> 西口側，營業時間長。 <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E5%87%BA%E9%9B%B2%20%E6%B1%A0%E8%A2%8B%20%E3%81%86%E3%81%AA%E3%81%8E">Maps</a></div>
+      </div>
+    </div>
+  </div></div></div>
+
+  <div class="ride">
+    <div class="ride-title">🚇 澀谷 → 池袋 <span class="suica">Suica 可用</span> <span class="timechip">⏱ 約15～20分</span></div>
+    <p><strong>副都心線 F16</strong>，方向：<strong>和光市方面</strong> → <strong>池袋 F09</strong>，直達。</p>
+  </div>
+
+  <div class="stop card"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🏬 東武百貨 6F｜超大 DAISO</div>
+    <div class="stop-desc">抵達池袋後先處理西口側東武，主攻大型DAISO。</div>
+  </div></div></div>
+
+  <div class="stop card"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">❤️ Animate 池袋本店</div>
+    <div class="stop-desc">新品主場，重點看咒術、虎杖與當期活動商品。</div>
+  </div></div></div>
+
+  <div class="stop card"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🧸 あみあみ池袋miniフェアグッズ店</div>
+    <div class="stop-desc">Animate 後順路快速巡店｜建議約15～25分鐘。mini店型，看到咒術／虎杖與當期フェア商品再出手。｜<a href="https://share.google/Qbyf9l8Whjt0Lu1ee" target="_blank" rel="noopener">Google Maps</a></div>
+  </div></div></div>
+
+  <div class="stop card"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🛍️ 駿河屋 池袋キャラグッズ館</div>
+    <div class="stop-desc">中古角色周邊挖寶，找咒術立牌、徽章、娃娃與舊系列。</div>
+  </div></div></div>
+
+  <div class="stop card"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🐯 K-BOOKS 池袋キャラ館プラス</div>
+    <div class="stop-desc">JUMP系中古商品重點店，主攻虎杖舊谷、立牌、吧唧。</div>
+  </div></div></div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">☀️ Sunshine City｜大逛</div>
+    <div class="stop-desc">池袋真正主場：角色店、Bandai Namco Cross Store、巨大扭蛋店都留時間慢慢看。</div>
+  </div></div></div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">⚡ ポケモンセンターメガトウキョー｜限定徽章任務</div>
+    <div class="stop-desc">朋友委託第二站：池袋寶可夢中心。就在 Sunshine City，安排在太陽城大逛期間一起處理，不需要另外搭車。</div>
+    <div class="restaurant"><span class="kind">寶可夢中心／朋友代購</span><br>
+      <b>日文店名：</b>ポケモンセンターメガトウキョー<br>
+      <b>地點：</b>サンシャインシティ 専門店街アルパ 2F<br>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%A1%E3%82%AC%E3%83%88%E3%82%A6%E3%82%AD%E3%83%A7%E3%83%BC%20%E3%82%B5%E3%83%B3%E3%82%B7%E3%83%A3%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%86%E3%82%A3">📍 Google Maps</a><br>
+      <span class="alert">🔔 任務：買池袋店限定徽章</span>
+    </div>
+  </div></div></div>
+
+  <div class="stop card"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🛍️ 池袋 PARCO｜B2F＋6F</div>
+    <div class="stop-desc">B2F：JUMP SHOP、CAPCOM STORE、ちいかわらんど；6F：EVANGELION STORE。</div>
+  </div></div></div>
+
+  <div class="stop card flex"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-title">🍱 晚餐｜池袋鰻魚</div>
+    <div class="stop-desc">不綁死店家，依最後逛到哪裡、時間與排隊狀況滾動決定。</div>
+    <div class="restaurant">
+      <span class="kind">鰻魚飯／鰻魚三吃</span><br>
+      <b>晚餐候選 TOP 3</b>
+      <div class="backups">
+        <div>① <b>ひつまぶし名古屋備長 池袋パルコ店</b>｜<span class="kind">鰻魚三吃</span> PARCO 8F，與最後一站銜接最好。 <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E3%81%B2%E3%81%A4%E3%81%BE%E3%81%B6%E3%81%97%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%82%99%E9%95%B7%20%E6%B1%A0%E8%A2%8B%E3%83%91%E3%83%AB%E3%82%B3%E5%BA%97">📍 Maps</a></div>
+        <div>② <b>うなぎ吉川 池袋店</b>｜<span class="kind">鰻魚飯</span> 東池袋，營業時間較晚。 <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E3%81%86%E3%81%AA%E3%81%8E%E5%90%89%E5%B7%9D%20%E6%B1%A0%E8%A2%8B%E5%BA%97">📍 Maps</a></div>
+        <div>③ <b>うなぎと地酒 まんまる 本店</b>｜<span class="kind">鰻魚＋地酒</span> 西口側，若最後回到西口可選。 <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=%E3%81%86%E3%81%AA%E3%81%8E%E3%81%A8%E5%9C%B0%E9%85%92%20%E3%81%BE%E3%82%93%E3%81%BE%E3%82%8B%20%E6%9C%AC%E5%BA%97%20%E6%B1%A0%E8%A2%8B">📍 Maps</a></div>
+      </div>
+    </div>
+  </div></div></div>
+
+  <div class="ride">
+    <div class="ride-title">🚃 池袋 → 錦糸町 <span class="suica">Suica 可用</span> <span class="timechip">⏱ 約35～40分</span></div>
+    <p><strong>JR山手線</strong>，方向：<strong>新宿・渋谷方面</strong> → <strong>代々木</strong>。</p>
+    <p>轉 <strong>JR中央・総武線各駅停車</strong>，方向：<strong>秋葉原・千葉方面</strong> → <strong>錦糸町</strong>。</p>
+  </div>
+</section>
+
+<section class="panel" id="day12">
+  <div class="day-title">10/12（一）｜錦糸町自由時間 → 成田機場 → 回台灣</div>
+  <div class="day-sub">最後一天不排硬景點；10:00可機動逛錦糸町3COINS+plus。原則10/11晚已整理好行李，逛完回飯店拿行李，11:00前退房。</div>
+
+  <div class="stop card flex"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-time">10:00</div><div class="stop-title">🛍️ 3COINS+plus アルカキット錦糸町店｜機動補貨</div>
+    <div class="stop-desc">最後一天的機動選項。10/11晚上原則上先把行李整理完成；如果10/10原宿本店還沒買夠，10:00開門就來逛，買完回飯店拿已整理好的行李即可。若原宿已買滿意，這站直接跳過，早上睡晚一點。</div>
+    <div class="restaurant"><span class="kind">生活雜貨／3COINS+plus</span><br>
+      <b>日文店名：</b>3COINS+plus アルカキット錦糸町店<br>
+      <b>位置：</b>アルカキット錦糸町 3F<br>
+      <b>營業時間：</b>10:00～21:00<br>
+      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=3COINS%2Bplus%20%E3%82%A2%E3%83%AB%E3%82%AB%E3%82%AD%E3%83%83%E3%83%88%E9%8C%A6%E7%B3%B8%E7%94%BA%E5%BA%97">📍 Google Maps</a><br>
+      <span class="alert">🧳 10/11晚先完成打包，10/12這裡只負責「最後補貨 → 回飯店拿行李 → 出發機場」，不要早上重新大整理。</span>
+    </div>
+  </div></div></div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-time">最晚11:00</div><div class="stop-title">🧳 相鐵 FRESA INN 東京錦糸町退房</div>
+    <div class="stop-desc">退房後直接前往JR錦糸町站。</div>
+  </div></div></div>
+
+  <div class="ride">
+    <div class="ride-title">🚃 錦糸町 → 成田機場 T1 <span class="suica">Suica 可用</span> <span class="timechip">⏱ 約75～85分</span></div>
+    <p><strong>JR総武快速線／成田線</strong>｜認電子看板上的 <strong>「成田空港 / Narita Airport」</strong>。</p>
+    <p>直通班次不用換車，一路坐到最後一站 <strong>成田空港駅（Terminal 1）</strong>。</p>
+    <div class="alert">⚠️ 「空港第2ビル」是T2/T3，不要提早下車。</div>
+  </div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-time">14:20前抵達</div><div class="stop-title">✈️ 成田機場第一航廈</div>
+    <div class="stop-desc">16:50起飛，依起飛前2.5小時原則，最晚14:20要到。建議12:30～12:45左右搭上往成田的車。</div>
+  </div></div></div>
+
+  <div class="stop card fixed"><div class="stop-head"><input class="check" type="checkbox"><div>
+    <div class="stop-time">16:50 → 19:40</div><div class="stop-title">✈️ 成田 T1 → 台北</div>
+    <div class="stop-desc">辦理報到、托運、安檢與出境；最後有空再補伴手禮。</div>
+  </div></div></div>
+</section>
+
+<section class="card section">
+  <div class="title">🔔 出發前／當天特別提醒</div>
+  <ul class="small muted">
+    <li><b>10/8：</b>成田入境時間不可控；SHIBUYA TSUTAYA 咒術迴戰5週年快閃是最後一天，抵達飯店放行李後優先衝澀谷；かぐらちゃかプチ抹茶降為「時間非常充裕才去」。16:40 Chiikawa Park 已購票，最晚15:20～15:30離開澀谷。</li>
+    <li><b>10/8 晚餐：</b>ねぎし池袋東口店不可預約，營業到22:30（L.O.22:00）；PARK結束後直接去最順。</li>
+    <li><b>10/9：</b>淺草午餐本命是与ろゐ屋，備案為日向丸／まぐろとシャリ。飯田屋維持機動，不為筷子拖延春日部。春日部市役所為最高優先；ぷらっとかすかべ與LaLa Garden為核心。晴空塔只當回程加碼，晚上秋葉原二刷ローストビーフ大野。</li>
+    <li><b>10/10：</b>09:00 TEAVANA™ → 10:30 On整理券 → On/HOKA依券面時間滾動；Nakamata午餐也不要綁死。</li>
+    <li><b>10/10 niko and ...：</b>目標衣服商品番号 <b>1078894「JJK／ウラケフーディー」</b>；現場庫存可能和官網不同。</li>
+    <li><b>10/11：</b>別忘記朋友委託的 <b>澀谷店＋池袋店寶可夢中心限定徽章</b>。</li>
+    <li><b>東京站：</b>別忘記東京站店限定「餘額不足小八貓」立體模型。</li>
+  </ul>
+</section>
+
+<section class="card section">
+  <div class="title">💳 Suica 超簡單提醒</div>
+  <ul class="small muted">
+    <li>本手冊安排的 JR、東京Metro、都營地下鐵、京成 Access 特急、東武一般／急行都可直接刷 Suica。</li>
+    <li>如果臨時改搭 Skyliner、N'EX、東武特急等「特急／指定席」，需另外買特急券／指定席券。</li>
+    <li>走路路段一律直接開 Google Maps，不在手冊塞路口導航。</li>
+  </ul>
+</section>
+
+<div class="footer">東京 2026｜正式最新版 v7｜10/9淺草午餐備案＋春日部核心巡禮＋秋葉原牛肉飯</div>
+</div>
+
+<script>
+const tabs=[...document.querySelectorAll('.tab')];
+const panels={8:day8,9:day9,10:day10,11:day11,12:day12};
+tabs.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    tabs.forEach(t=>t.classList.remove('active'));
+    btn.classList.add('active');
+    Object.values(panels).forEach(p=>p.classList.remove('active'));
+    panels[btn.dataset.day].classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+document.querySelectorAll('.check').forEach(box=>{
+  box.addEventListener('change',()=>box.closest('.stop').classList.toggle('done',box.checked));
+});
+document.getElementById('clear').addEventListener('click',()=>{
+  document.querySelectorAll('.check').forEach(box=>{
+    box.checked=false;
+    box.closest('.stop').classList.remove('done');
+  });
+});
+</script>
+</body>
+</html>
